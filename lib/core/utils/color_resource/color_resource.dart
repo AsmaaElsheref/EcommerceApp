@@ -9,12 +9,6 @@ class ColorResources {
 
   static Color get black => const Color(0xFF303030);
 
-  static Color get purple => const Color(0xFF4D0A8E);
-
-  static Color get pink => const Color(0xFFCE048C);
-
-  static Color get yellow => const Color(0xFFF4BD46);
-
   static Color get green => const Color(0xFF14AE5C);
 
   static Color get blue => const Color(0xFF006AFF);
