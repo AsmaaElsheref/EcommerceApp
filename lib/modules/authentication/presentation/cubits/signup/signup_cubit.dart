@@ -6,6 +6,7 @@ import 'package:meta/meta.dart';
 
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../../../../core/utils/print/custom_print.dart';
+import '../../../../../core/widgets/toast/toast.dart';
 import '../../../../../data/localStorage/cache_helper.dart';
 
 part 'signup_state.dart';
@@ -73,8 +74,8 @@ class SignupCubit extends Cubit<SignupState> {
       });
       customPrint("Registered successfully");
       emit(SignupSuccess());
-    } catch (e) {
-      customPrint("Registration error: $e");
+    } on FirebaseAuthException catch (e) {
+      toast(msg: e.code,isError: true);
       emit(SignupFailed());
     }
   }
